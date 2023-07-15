@@ -11,9 +11,9 @@ app.use(helmet());
 app.use(compression());
 
 // init db
-require("./dbs/init.mongodb");
-const { checkOverLoad } = require("./helpers/check.connect");
-checkOverLoad();
+require("./dbs/init.mongodb.lv0");
+const { countConnect } = require("./helpers/check.connect");
+countConnect();
 
 // init routes
 
