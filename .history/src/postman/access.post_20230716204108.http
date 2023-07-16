@@ -1,0 +1,31 @@
+@url_dev = http://localhost:8000/v1/api/
+
+### signup
+POST {{url_dev}}/shop/signup
+Content-Type: application/json
+x-api-key: fb8b76dd83e65b3bc688bf2aafb5a4655681371ce16a9c7b6b9888af4379b82c14da803c5b83258f91a40aa4fac4424d1d2fe508e475c2a73258decd352d1e6c
+
+{
+    "name": "viettu5",
+    "email": "viettu5@gmail.com`",
+    "password": "viettu5"
+}
+
+
+### login
+POST {{url_dev}}/shop/login
+Content-Type: application/json
+x-api-key: fb8b76dd83e65b3bc688bf2aafb5a4655681371ce16a9c7b6b9888af4379b82c14da803c5b83258f91a40aa4fac4424d1d2fe508e475c2a73258decd352d1e6c
+
+{
+    "email": "viettu5@gmail.com`",
+    "password": "viettu5"
+}
+
+### logout
+POST {{url_dev}}/shop/logout
+Content-Type: application/json
+x-api-key: fb8b76dd83e65b3bc688bf2aafb5a4655681371ce16a9c7b6b9888af4379b82c14da803c5b83258f91a40aa4fac4424d1d2fe508e475c2a73258decd352d1e6c
+x-client-id: 64b2c462d4dd5c9ab2abb0fd
+authorzation: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGIyYzQ2MmQ0ZGQ1YzlhYjJhYmIwZmQiLCJlbWFpbCI6InZpZXR0dTVAZ21haWwuY29tYCIsImlhdCI6MTY4OTUxNDgzOSwiZXhwIjoxNjg5Njg3NjM5fQ.3THdzXHHbE6RYcnTFxPWQPO8xo0dUAaHySpkeRZ6vvA
+
