@@ -20,7 +20,7 @@ router.post("/shop/logout", asyncHandler(accessController.logout));
 
 router.post(
   "/shop/handlerRefreshToken",
-  asyncHandler(accessController.handlerRefreshTokenV2)
+  asyncHandler(accessController.handlerRefreshToken)
 );
 
 module.exports = router;

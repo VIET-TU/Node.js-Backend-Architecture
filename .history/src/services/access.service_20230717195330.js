@@ -155,6 +155,7 @@ class AccessService {
 
   static signUp = async ({ name, email, password }) => {
     const hodelShop = await shopModel.findOne({ email }).lean(); // learn return object js
+    console.log("hello world");
     if (hodelShop) {
       throw new BadRequestError("Error: Shop already registered!");
     }
@@ -165,6 +166,8 @@ class AccessService {
       password: passwordHash,
       role: [RoleShop.SHOP],
     });
+
+    // console.log("newshop  :>> ", newshop);
 
     if (newShop) {
       // created privateKey, publicKey

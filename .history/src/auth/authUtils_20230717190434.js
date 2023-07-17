@@ -9,7 +9,7 @@ const HEADER = {
   API_KEY: "x-api-key",
   CLIENT_ID: "x-client-id",
   AUTHORZATION: "authorzation",
-  REFRESHTOKEN: "x-rtoken-id",
+  REFRESHTOKEN: "refreshtoken",
 };
 
 const createTokenPair = async (payload, publicKey, privateKey) => {
@@ -108,7 +108,7 @@ const authentacationV2 = asyncHandler(async (req, res, next) => {
     if (userId !== decodedUser.userId)
       throw new AuthFailureError("Invaild userId");
     req.keyStore = keyStore;
-    req.user = decodedUser;
+
     return next();
   } catch (error) {
     console.log("error :>> ", error);
@@ -124,5 +124,4 @@ module.exports = {
   createTokenPair,
   authentacation,
   verifyJWT,
-  authentacationV2,
 };

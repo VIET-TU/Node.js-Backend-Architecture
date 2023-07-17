@@ -37,24 +37,3 @@ x-api-key: fb8b76dd83e65b3bc688bf2aafb5a4655681371ce16a9c7b6b9888af4379b82c14da8
 x-client-id: 64b2c462d4dd5c9ab2abb0fd
 x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGIyYzQ2MmQ0ZGQ1YzlhYjJhYmIwZmQiLCJlbWFpbCI6InZpZXR0dTVAZ21haWwuY29tYCIsImlhdCI6MTY4OTU5NzY3MiwiZXhwIjoxNjg5NzcwNDcyfQ.E5-OFXtOme4bzPigGq0XQxhFhrRFetrS74GZ2uDf8AU
 
-
-### add product
-POST {{url_dev}}product/shop/handlerRefreshToken
-Content-Type: application/json
-x-api-key: fb8b76dd83e65b3bc688bf2aafb5a4655681371ce16a9c7b6b9888af4379b82c14da803c5b83258f91a40aa4fac4424d1d2fe508e475c2a73258decd352d1e6c
-x-client-id: 64b2c462d4dd5c9ab2abb0fd
-authorzation: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGIyYzQ2MmQ0ZGQ1YzlhYjJhYmIwZmQiLCJlbWFpbCI6InZpZXR0dTVAZ21haWwuY29tYCIsImlhdCI6MTY4OTYwMTU5OCwiZXhwIjoxNjg5Nzc0Mzk4fQ.osNk0IDv37svT59fq_OEufnslzrKdAUeCqRMAoEcpGk
-
-{
-    "product_name": "New Jeans",
-"product_thumb": "product_thumb",
-"product_description": "High-qulity denim jeans",
-"product_price": 50,
-"product_quality": 5,
-"product_type": "Clothing",
-"product_attributes": {
-    "brand": "Levis",
-    "size": "L",
-    "material": "Denim"
-    }
-}

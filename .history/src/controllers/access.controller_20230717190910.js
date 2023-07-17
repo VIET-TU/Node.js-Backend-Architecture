@@ -14,7 +14,7 @@ class AccessController {
     // v2 fix, no nedd accessToken
     new SuccessResponse({
       message: "Get token success",
-      metadata: await AccessService.handlerRefreshTokenV2({
+      metadata: await AccessService.handlerRefreshToken({
         refreshToken: req.refreshToken,
         user: req.user,
         keyStore: req.keyStore,

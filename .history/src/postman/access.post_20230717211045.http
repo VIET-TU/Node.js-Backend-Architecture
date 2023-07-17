@@ -52,6 +52,7 @@ authorzation: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGIyYzQ2MmQ0Z
 "product_price": 50,
 "product_quality": 5,
 "product_type": "Clothing",
+"product_shop": "64b2c462d4dd5c9ab2abb0fd",
 "product_attributes": {
     "brand": "Levis",
     "size": "L",
