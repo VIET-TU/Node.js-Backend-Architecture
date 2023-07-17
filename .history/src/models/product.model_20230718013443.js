@@ -1,5 +1,4 @@
 const { model, Schema } = require("mongoose");
-const slugify = require("slugify");
 
 const COLLECTION_NAME = "Products";
 const COLLECTION_CLOTHING_NAME = "Clothings";
@@ -9,7 +8,6 @@ const COLLECTION_FURNITURE_NAME = "Furnitures";
 const productSchema = new Schema(
   {
     product_name: {
-      // quan jean cao cap
       type: String,
       trim: true,
       maxLength: 150,
@@ -21,7 +19,7 @@ const productSchema = new Schema(
     product_description: {
       type: String,
     },
-    product_slug: String, // quan-jean-cao-cap
+    product_slug: String, // quan-jean
     product_price: {
       type: Number,
       required: true,
@@ -43,47 +41,12 @@ const productSchema = new Schema(
       type: Schema.Types.Mixed, // store data JSON
       required: true,
     },
-    // more
-    // more
-    product_ratingsAverage: {
-      type: Number,
-      default: 4.5,
-      min: [1, "Rating must be above 1.0"],
-      max: [5, "Rating must be above 5.0"],
-      // 4.3456666 => 4.3 - round ham lam tron len so thu nhat sau dau phay
-      set: (val) => Math.round(val * 10) / 10,
-    },
-    product_variations: {
-      // kich thuoc, chat lieu, ram bao nhieu
-      type: Array,
-      default: [],
-    },
-    isDraft: {
-      // nhap
-      type: Boolean,
-      default: true, // khong dk select ra
-      index: true,
-      select: false, // khong lay field nay ra
-    },
-    isPublished: {
-      type: Boolean,
-      default: false, // khong dk select ra
-      index: true,
-      select: false, // khong lay field nay ra
-    },
   },
   {
     timestamps: true,
     collection: COLLECTION_NAME,
   }
 );
-
-// Document middleware: runs before .save() and .create() ....
-
-productSchema.pre("save", function (next) {
-  this.product_slug = slugify(this.product_name, { lower: true });
-  next();
-});
 
 const clothingSchema = new Schema(
   {

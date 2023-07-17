@@ -80,7 +80,7 @@ const productSchema = new Schema(
 
 // Document middleware: runs before .save() and .create() ....
 
-productSchema.pre("save", function (next) {
+productSchema.pre("save", (next) => {
   this.product_slug = slugify(this.product_name, { lower: true });
   next();
 });

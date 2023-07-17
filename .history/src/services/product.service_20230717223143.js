@@ -22,7 +22,6 @@ class ProductFactory {
   }
 
   static async createProduct(type, payload) {
-    console.log("type :>> ", type);
     const productClass = ProductFactory.productRegistry[type];
     if (!productClass)
       throw new BadRequestError(`Invalid Product Types ${type}`);

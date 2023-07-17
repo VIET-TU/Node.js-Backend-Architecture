@@ -14,29 +14,15 @@ class ProductFactory {
    *  type: 'Clothing ',
    * payload
    */
-
-  static productRegistry = {}; // key-class
-
-  static registerProductType(type, classRef) {
-    ProductFactory.productRegistry[type] = classRef;
-  }
-
   static async createProduct(type, payload) {
-    console.log("type :>> ", type);
-    const productClass = ProductFactory.productRegistry[type];
-    if (!productClass)
-      throw new BadRequestError(`Invalid Product Types ${type}`);
-
-    return new productClass(payload).createProduct();
-
-    // switch (type) {
-    //   case "Electronics":
-    //     return new Electronic(payload).createProduct();
-    //   case "Clothing":
-    //     return new Clothing(payload).createProduct();
-    //   default:
-    //     throw new BadRequestError(`Invalid Product Types ${type}`);
-    // }
+    switch (type) {
+      case "Electronics":
+        return new Electronic(payload).createProduct();
+      case "Clothing":
+        return new Clothing(payload).createProduct();
+      default:
+        throw new BadRequestError(`Invalid Product Types ${type}`);
+    }
   }
 }
 
@@ -76,7 +62,9 @@ class Clothing extends Product {
       product_shop: this.product_shop,
     });
     if (!newClothing) throw new BadRequestError("Error create new Clothing");
-    const newProduct = await super.createProduct(newClothing._id);
+    const newProduct = await super.createProduct(
+      <newClothing className="_id"> </newClothing>
+    );
     if (!newProduct) throw new BadRequestError("Error create new Product");
     return newProduct;
   }
@@ -104,16 +92,11 @@ class Furniture extends Product {
       ...this.product_attributes,
       product_shop: this.product_shop,
     });
-    if (!newFurniture) throw new BadRequestError("Error create new Furniture");
-    const newProduct = await super.createProduct(newFurniture._id);
+    if (!newElectronic) throw new BadRequestError("Error create new Furniture");
+    const newProduct = await super.createProduct(newElectronic._id);
     if (!newProduct) throw new BadRequestError("Error create new Product");
     return newProduct;
   }
 }
-
-// register product types
-ProductFactory.registerProductType("Electronics", Electronic);
-ProductFactory.registerProductType("Clothing", Clothing);
-ProductFactory.registerProductType("Furniture", Furniture);
 
 module.exports = ProductFactory;
