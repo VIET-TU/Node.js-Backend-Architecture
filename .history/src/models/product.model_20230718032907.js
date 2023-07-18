@@ -63,7 +63,7 @@ const productSchema = new Schema(
       type: Boolean,
       default: true, // khong dk select ra
       index: true,
-      select: false, // khong lay field nay ra
+      select: true, // khong lay field nay ra
     },
     isPublished: {
       type: Boolean,
@@ -77,9 +77,6 @@ const productSchema = new Schema(
     collection: COLLECTION_NAME,
   }
 );
-
-// Create index for search
-productSchema.index({ product_name: "text", product_description: "text" });
 
 // Document middleware: runs before .save() and .create() ....
 

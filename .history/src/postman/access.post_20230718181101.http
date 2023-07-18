@@ -83,11 +83,6 @@ authorzation: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGIyYzQ2MmQ0Z
 
 
 ### Search product by name and description
-GET {{url_dev}}product/search/iphone
-x-api-key: fb8b76dd83e65b3bc688bf2aafb5a4655681371ce16a9c7b6b9888af4379b82c14da803c5b83258f91a40aa4fac4424d1d2fe508e475c2a73258decd352d1e6c
-
-
-### Search product by name and description
-GET {{url_dev}}product/
+GET {{url_dev}}product//search/iphon
 x-api-key: fb8b76dd83e65b3bc688bf2aafb5a4655681371ce16a9c7b6b9888af4379b82c14da803c5b83258f91a40aa4fac4424d1d2fe508e475c2a73258decd352d1e6c
 

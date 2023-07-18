@@ -10,9 +10,6 @@ router.get(
   "/search/:keySearch",
   asyncHandler(productController.getListSearchProduct)
 );
-router.get("/", asyncHandler(productController.findAllProducts));
-
-router.get("/:product_id", asyncHandler(productController.findProduct));
 
 // authentication
 router.use(authentacationV2);
@@ -20,7 +17,10 @@ router.use(authentacationV2);
 /////////////////
 
 // Post
-router.post("", asyncHandler(productController.createProduct));
+router.post(
+  "/shop/handlerRefreshToken",
+  asyncHandler(productController.createProduct)
+);
 router.post(
   "/publish/:id",
   asyncHandler(productController.publishProductByshop)

@@ -42,6 +42,7 @@ class ProductController {
    * @return {JSON}
    */
   getAllDraftsForShop = async (req, res, next) => {
+    console.log("req.body :>> ", req.body);
     new SuccessResponse({
       message: "Get list drafts success",
       metadata: await productService.findAllDraftsForShop({
@@ -51,6 +52,7 @@ class ProductController {
   };
 
   getAllPublishForShop = async (req, res, next) => {
+    console.log("req.body :>> ", req.body);
     new SuccessResponse({
       message: "Get list publishes success",
       metadata: await productService.findAllPublishForShop({
@@ -58,31 +60,6 @@ class ProductController {
       }),
     }).send(res);
   };
-
-  getListSearchProduct = async (req, res, next) => {
-    new SuccessResponse({
-      message: "Get list getListSearchProduct success",
-      metadata: await productService.searchProduct(req.params),
-    }).send(res);
-  };
-
-  findAllProducts = async (req, res, next) => {
-    new SuccessResponse({
-      message: "Get list findAllProducts success",
-      metadata: await productService.findAllProducts(req.query),
-    }).send(res);
-  };
-
-  findProduct = async (req, res, next) => {
-    new SuccessResponse({
-      message: "Get list findProduct success",
-      metadata: await productService.findProduct({
-        product_id: req.params.product_id,
-      }),
-    }).send(res);
-  };
-
-  // END QUERY
 }
 
 module.exports = new ProductController();

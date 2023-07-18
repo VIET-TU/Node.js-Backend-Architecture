@@ -11,7 +11,7 @@ const getSelectData = (select = []) => {
   return Object.fromEntries(select.map((el) => [el, 1]));
 };
 
-// ['a', 'b'] = {a: 0, b: 0}
+// ['a', 'b'] = {a: 1, b: 1}
 const unGetSelectData = (select = []) => {
   return Object.fromEntries(select.map((el) => [el, 0]));
 };
@@ -19,5 +19,4 @@ const unGetSelectData = (select = []) => {
 module.exports = {
   getInfoData,
   getSelectData,
-  unGetSelectData,
 };
